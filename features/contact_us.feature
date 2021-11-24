@@ -34,6 +34,7 @@ Feature: AutomationPractice Contact us Page Test
         And the message is filled with "<message>"
         When the send button is clicked
         Then a "<msg>" message is shown
+        
         Examples:
             | subject      | email        | message | msg                                             |
             | -- Choose -- | qwe@mail.com | Hello   | Please select a subject from the list provided. |
