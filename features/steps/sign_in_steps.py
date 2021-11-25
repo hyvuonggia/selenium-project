@@ -1,5 +1,3 @@
-
-
 from behave import *
 import parse
 
@@ -8,6 +6,7 @@ def parse_nullable_string(text):
     return text
 
 register_type(NullableString = parse_nullable_string)
+
 
 @given(u'the Sign in link is clicked')
 def step_impl(context):

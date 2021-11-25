@@ -8,7 +8,7 @@ Feature: AutomationPractice Contact us Page Test
         Given the subject heading is "Customer service"
         And the email address is filled with "abc@mail.com"
         And order reference is filled with "abc123456"
-        And the attach file is "\\image.png" 
+        And the attach file is "\\test.jpg" 
         And the message is filled with "This is a message"
         When the send button is clicked
         Then a "Your message has been successfully sent to our team." message is shown
@@ -24,8 +24,8 @@ Feature: AutomationPractice Contact us Page Test
 
         Examples:
             | subject           | email        | order | attachment | message  | msg                                                  |
-            | Webmaster         | qwe@mail.com | qwe   | \image.png | Hello1   | Your message has been successfully sent to our team. |
-            | Customer service  | asd@mail.com | abc   | \image.png | Hello2   | Your message has been successfully sent to our team. |
+            | Webmaster         | qwe@mail.com | qwe   | \test.jpg  | Hello1   | Your message has been successfully sent to our team. |
+            | Customer service  | asd@mail.com | abc   | \test.jpg  | Hello2   | Your message has been successfully sent to our team. |
             | Webmaster         | qwe@mail.com | qwe   |            | Hello3   | Your message has been successfully sent to our team. |
 
     Scenario Outline: Fail to contact with AutomationPractice
@@ -36,7 +36,7 @@ Feature: AutomationPractice Contact us Page Test
         Then a "<msg>" message is shown
         
         Examples:
-            | subject      | email        | message | msg                                             |
-            | -- Choose -- | qwe@mail.com | Hello   | Please select a subject from the list provided. |
-            | Webmaster    |              | Hello   | Invalid email address.                          |
-            | Webmaster    | qwe@mail.com |         | The message cannot be blank.                    |
+            | subject          | email        | message     | msg                                             |
+            | -- Choose --     | qwe@mail.com | Hello       | Please select a subject from the list provided. |
+            | Webmaster        |              | Hello World | Invalid email address.                          |
+            | Customer service | qwe@mail.com |             | The message cannot be blank.                    |
